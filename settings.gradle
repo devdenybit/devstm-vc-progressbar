@@ -1,0 +1,3 @@
+rootProject.name = "DevSty VC"
+include ':app'
+include ':vclibs'
