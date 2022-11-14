@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         AppManage.getInstance(this).customeAdCall(this);
-        AppManage.getInstance(this).showNativeBanner((ViewGroup) findViewById(R.id.banner_container), ADMOB_B[0], FACEBOOK_NB[0]);
+        AppManage.getInstance(this).showNativeBanner((ViewGroup) findViewById(com.unisob.vclibs.R.id.banner_container), ADMOB_B[0], FACEBOOK_NB[0]);
         AppManage.getInstance(this).showNative((ViewGroup) findViewById(com.unisob.vclibs.R.id.native_container), ADMOB_N0, FACEBOOK_N[0]);
 
 

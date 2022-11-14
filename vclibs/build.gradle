@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    compileSdkVersion 32
+    compileSdk 32
 
     sourceSets.main {
         jniLibs.srcDir 'libs'
@@ -12,8 +12,8 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 32
+        minSdk 21
+        targetSdk 32
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 

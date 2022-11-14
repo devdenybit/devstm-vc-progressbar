@@ -1,4 +1,22 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
+    dependencies {
+        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:0.14.0'
+    }
+}
+
+plugins {
+    id 'com.android.application' version '7.2.1' apply false
+    id 'com.android.library' version '7.2.1' apply false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+/*
+buildscript {
+
     repositories {
         google()
         mavenCentral()
@@ -30,4 +48,4 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
-}
+}*/

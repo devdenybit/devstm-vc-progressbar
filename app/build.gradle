@@ -1,19 +1,17 @@
 plugins {
     id 'com.android.application'
-    id 'maven-publish'
+   // id 'maven-publish'
 }
 
 android {
-    compileSdkVersion 32
+    compileSdk 32
 
     defaultConfig {
         applicationId "com.devsty.vc"
-        minSdkVersion 21
-        targetSdkVersion 32
+        minSdk 21
+        targetSdk 32
         versionCode 1
         versionName "1.0"
-        multiDexEnabled true
-        vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -33,10 +31,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    lint {
+   /* lint {
         abortOnError false
         checkReleaseBuilds false
-    }
+    }*/
     namespace 'com.devsty.vc'
 }
 
