@@ -42,14 +42,14 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="Report This User?"
+                        android:text="Report/Block This User?"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_18sdp"
                         android:textStyle="bold" />
 
                 </FrameLayout>
 
-                <TextView
+               <!-- <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -58,7 +58,7 @@
                     android:text="Why are you Reporting?"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="@dimen/_14sdp" />-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -130,57 +130,56 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15sdp"
                 android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/no"
                         android:layout_width="@dimen/_80sdp"
                         android:layout_height="@dimen/_30sdp"
-                        android:layout_gravity="end"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:layout_marginEnd="@dimen/_10sdp"
                         android:background="#007BFF"
                         android:fontFamily="sans-serif"
                         android:gravity="center"
                         android:text="CANCEL"
                         android:textColor="@color/white"
                         android:textSize="18sp"
+                        android:layout_marginHorizontal="@dimen/_3sdp"
                         android:textStyle="bold" />
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/reyes"
                         android:layout_width="@dimen/_80sdp"
                         android:layout_height="@dimen/_30sdp"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:layout_marginBottom="@dimen/_10sdp"
                         android:layout_weight="1"
-                        android:background="#FF1100"
-                        android:layout_marginStart="@dimen/_10sdp"
+                        android:background="#F4B700"
                         android:fontFamily="sans-serif"
                         android:gravity="center"
                         android:text="REPORT"
                         android:textColor="@color/white"
                         android:textSize="18sp"
+                        android:layout_marginHorizontal="@dimen/_3sdp"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/reblack"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_weight="1"
+                        android:background="#FF1100"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:text="BLOCK"
+                        android:layout_marginHorizontal="@dimen/_3sdp"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
-            </LinearLayout>
         </LinearLayout>
 
 

@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.unisob.vclibs.activties.HomePageActivity;
 import com.unisob.vclibs.mads.AppManage;
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
 
     public void necxt(View view) {
         startActivity(new Intent(MainActivity.this, HomePageActivity.class));

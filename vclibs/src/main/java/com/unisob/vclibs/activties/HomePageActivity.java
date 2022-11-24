@@ -7,6 +7,7 @@ import static com.unisob.vclibs.mads.AppManage.FACEBOOK_N;
 import static com.unisob.vclibs.mads.AppManage.FACEBOOK_NB;
 import static com.unisob.vclibs.mads.AppManage.False_Video_Show;
 import static com.unisob.vclibs.mads.AppManage.True_Video_Show;
+import static com.unisob.vclibs.mads.AppManage.app_privacyPolicyLink;
 import static com.unisob.vclibs.mads.AppManage.maxvidcount;
 
 import android.app.Activity;
@@ -15,10 +16,16 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.RectShape;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,6 +83,58 @@ public class HomePageActivity extends AppCompatActivity implements GetRequestLis
     public static int randomposition = 0;
     public static int LP = 0;
     public static SharedPreferences sh;
+
+    GradientDrawable gd1,gd2;
+
+
+    private String mColors[] = {
+            "#39add1", // light blue [0]
+            "#3079ab", // dark blue [1]
+            "#c25975", // mauve [2]
+            "#e15258", // red
+            "#f9845b", // orange
+            "#838cc7", // lavender
+            "#7d669e", // purple
+            "#53bbb4", // aqua
+            "#51b46d", // green
+            "#e0ab18", // mustard
+            "#637a91", // dark gray
+            "#f092b0", // pink
+            "#b7c0c7"  // light gray
+    };
+
+    private String mColors2[] = {
+            "#3079ab", //dark blue  [0]
+            "#39add1", // light blue [1]
+            "#e0ab18", // mustard [2]
+            "#637a91", // dark gray
+            "#f092b0", // pink
+            "#b7c0c7",  // light gray
+            "#c25975", // mauve
+            "#51b46d", // green
+            "#e15258", // red
+            "#f9845b", // orange
+            "#838cc7", // lavender
+            "#7d669e", // purple
+            "#53bbb4", // aqua
+    };
+
+
+    public int[] getGcolors() {
+        String color = "";
+        String color2 = "";
+
+        Random randomGenerator = new Random();
+        int randomNumber = randomGenerator.nextInt(mColors.length);
+
+        color = mColors[randomNumber];
+        color2 = mColors2[randomNumber];
+        int colorAsInt = Color.parseColor(color);
+        int colorAsInt2 = Color.parseColor(color2);
+
+        return new int[]{colorAsInt, colorAsInt2};
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,7 +147,6 @@ public class HomePageActivity extends AppCompatActivity implements GetRequestLis
 
         if (randomposition == 0) {
             randomposition = new Random().nextInt((max - min) + 1) + min;
-          //  SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
             SharedPreferences.Editor editor = sh.edit();
             editor.putInt("layout_position", randomposition);
             editor.apply();
@@ -106,15 +164,57 @@ public class HomePageActivity extends AppCompatActivity implements GetRequestLis
         call_timer_layout = findViewById(R.id.call_timer_layout);
         timer = findViewById(R.id.timer);
 
+        int[] gColors = getGcolors();
+        gd1 = new GradientDrawable(
+                GradientDrawable.Orientation.TOP_BOTTOM,
+                new int[]{gColors[0], gColors[1]});
+        gd1.setCornerRadius(0f);
+        findViewById(R.id.lnrsbg).setBackground(gd1);
 
-        Random rnd = new Random();
-        int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
-        findViewById(R.id.btn_click).setBackgroundColor(color);
+        int[] gColors2 = getGcolors();
+        gd2 = new GradientDrawable(
+                GradientDrawable.Orientation.LEFT_RIGHT,
+                new int[]{gColors2[0], gColors2[1]});
+        gd2.setCornerRadius(20f);
+        findViewById(R.id.btn_click).setBackground(gd2);
+        findViewById(R.id.btn_click2).setBackground(gd2);
+
+
+        final int cmin = 1;
+        final int cmax = 5;
+        final int radmserver1 = new Random().nextInt((cmax - cmin) + 1) + cmin;
+
+        final int cmin2 = 6;
+        final int cmax2 = 9;
+        final int radmserver2 = new Random().nextInt((cmax2 - cmin2) + 1) + cmin2;
+
+        TextView server1 = findViewById(R.id.server1);
+        server1.setText("Server " + radmserver1);
+
+        TextView server2 = findViewById(R.id.server2);
+        server2.setText("Server " + radmserver2);
+
+        findViewById(R.id.privacypolicy).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(app_privacyPolicyLink.contains("blogspot.com")){
+                    startActivity(new Intent("android.intent.action.VIEW").setData(Uri.parse(app_privacyPolicyLink)));
+                }else{
+                    Intent intent = new Intent(HomePageActivity.this, PravacyPolicyActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        });
+
 
         Intent intent = getIntent();
         if (intent.getBooleanExtra("rate", false)) {
 
             findViewById(R.id.btn_click).setVisibility(View.GONE);
+            findViewById(R.id.btn_click2).setVisibility(View.GONE);
+            findViewById(R.id.txtConnect).setVisibility(View.GONE);
             call_timer_layout.setVisibility(View.VISIBLE);
 
 
@@ -124,7 +224,7 @@ public class HomePageActivity extends AppCompatActivity implements GetRequestLis
             if (rate_state == false) {
                 Rate();
             } else {
-                myCountdownTimer = new CountDownTimer(8000, 1000) {
+                myCountdownTimer = new CountDownTimer(7000, 1000) {
 
                     public void onTick(long millisUntilFinished) {
                         timer.setText("00:0" + millisUntilFinished / 1000);
@@ -133,6 +233,8 @@ public class HomePageActivity extends AppCompatActivity implements GetRequestLis
                     public void onFinish() {
                         myCountdownTimer.cancel();
                         findViewById(R.id.btn_click).setVisibility(View.VISIBLE);
+                        findViewById(R.id.btn_click2).setVisibility(View.VISIBLE);
+                        findViewById(R.id.txtConnect).setVisibility(View.VISIBLE);
                         call_timer_layout.setVisibility(View.GONE);
                     }
                 }.start();
@@ -141,24 +243,8 @@ public class HomePageActivity extends AppCompatActivity implements GetRequestLis
             }
         }
 
-       // SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
-       // SharedPreferences.Editor Editor = sharedPreferences.edit();
 
         goToMain();
-
-       /* if (Qureka_Status.equals("true")) {
-            findViewById(R.id.animationView_qureka).setVisibility(View.VISIBLE);
-            Glide.with(this).load(R.raw.gifts).into((ImageView) findViewById(R.id.animationView_qureka));
-        } else {
-            findViewById(R.id.animationView_qureka).setVisibility(View.GONE);
-        }
-
-        findViewById(R.id.animationView_qureka).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openChromeCustomTabUrl();
-            }
-        });*/
 
         counter = sh.getInt("counter", 0);
         crandomcounter = sh.getInt("crandomcounter", 0);
@@ -184,6 +270,18 @@ public class HomePageActivity extends AppCompatActivity implements GetRequestLis
                 }, "", AppManage.app_mainClickCntSwAd);
             }
         });
+
+        findViewById(R.id.btn_click2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                AppManage.getInstance(HomePageActivity.this).showInterstitialAd(HomePageActivity.this, new AppManage.MyCallback() {
+                    public void callbackCall() {
+                        Next_Activity();
+                    }
+                }, "", AppManage.app_mainClickCntSwAd);
+            }
+        });
         getListApps();
     }
 
@@ -198,11 +296,10 @@ public class HomePageActivity extends AppCompatActivity implements GetRequestLis
             finish();
         } else if (Both_video_show.equals("true")) {
             counter++;
-            if(crandomcounter  == 0) {
+            if (crandomcounter == 0) {
                 final int cmin = 3;
                 final int cmax = 8;
                 crandomcounter = new Random().nextInt((cmax - cmin) + 1) + cmin;
-               // SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
                 SharedPreferences.Editor Editor = sh.edit();
                 Editor.putInt("crandomcounter", crandomcounter);
                 Editor.putInt("counter", counter);
@@ -210,10 +307,9 @@ public class HomePageActivity extends AppCompatActivity implements GetRequestLis
                 Test_Activity_Lyout(HomePageActivity.this, LP);
 
             } else {
-                if(crandomcounter ==  counter) {
+                if (crandomcounter == counter) {
                     crandomcounter = 0;
                     counter = 0;
-                   // SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
                     SharedPreferences.Editor Editor = sh.edit();
                     Editor.putInt("counter", counter);
                     Editor.putInt("crandomcounter", crandomcounter);
@@ -225,9 +321,7 @@ public class HomePageActivity extends AppCompatActivity implements GetRequestLis
                     countrylist.putExtra("title", (moreAppList.get(randomposition).getUrl()));
                     startActivity(countrylist);
                     finish();
-                }
-                else  {
-                    //  SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+                } else {
                     SharedPreferences.Editor Editor = sh.edit();
                     Editor.putInt("counter", counter);
                     Editor.apply();
@@ -235,30 +329,8 @@ public class HomePageActivity extends AppCompatActivity implements GetRequestLis
                 }
             }
 
-           /* if (counter % 2 == 1) {
-                counter++;//call Fake video Activity
-                SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
-                SharedPreferences.Editor Editor = sharedPreferences.edit();
-                Editor.putInt("counter", counter);
-                Editor.apply();
-                final int min = 1;
-                final int max = maxvidcount;
-                final int randomposition = new Random().nextInt((max - min) + 1) + min;
-                Intent countrylist = new Intent(HomePageActivity.this, VideoPlayerActivity.class);
-                countrylist.putExtra("title", (moreAppList.get(randomposition).getUrl()));
-                startActivity(countrylist);
-                finish();
-            } else {
-                counter++;
-                SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
-                SharedPreferences.Editor Editor = sharedPreferences.edit();
-                Editor.putInt("counter", counter);
-                Editor.apply();
 
-                Test_Activity_Lyout(HomePageActivity.this, LP);
-            }*/
         } else if (True_Video_Show.equals("true")) {
-            // Test_Activity_Lyout(HomePageActivity.this, LP);
             Test_Activity_Lyout(HomePageActivity.this, 1);
         } else {
             Test_Activity_Lyout(HomePageActivity.this, LP);
@@ -390,7 +462,7 @@ public class HomePageActivity extends AppCompatActivity implements GetRequestLis
     }
 
     private void AppPermissions() {
-        if (!allPermissions() /*|| !accees_fine() || !acess_crose()*/ || !system_sto() || !statePermissions() || !CAMERA() || !CHANGE_NETWORK_STATE() || !MODIFY_AUDIO_SETTINGS() || !RECORD_AUDIO() || !BLUETOOTH() /*|| !WRITE_EXTERNAL_STORAGE()*/ || !CAPTURE_VIDEO_OUTPUT() /*|| !READ_EXTERNAL_STORAGE()*/) {
+        if (!allPermissions() || !system_sto() || !statePermissions() || !CAMERA() || !CHANGE_NETWORK_STATE() || !MODIFY_AUDIO_SETTINGS() || !RECORD_AUDIO() || !BLUETOOTH() /*|| !WRITE_EXTERNAL_STORAGE()*/ || !CAPTURE_VIDEO_OUTPUT() /*|| !READ_EXTERNAL_STORAGE()*/) {
             ActivityCompat.requestPermissions(this, new String[]{"android.permission.CAMERA", "android.permission.SYSTEM_ALERT_WINDOW", /*"android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_COARSE_LOCATION",*/ "android.permission.CHANGE_NETWORK_STATE", "android.permission.MODIFY_AUDIO_SETTINGS", "android.permission.RECORD_AUDIO", "android.permission.BLUETOOTH", "android.permission.INTERNET", /*"android.permission.WRITE_EXTERNAL_STORAGE",*/ "android.permission.ACCESS_NETWORK_STATE", "android.permission.CAPTURE_VIDEO_OUTPUT"/*, "android.permission.READ_EXTERNAL_STORAGE"*/}, 1);
         }
     }
@@ -398,14 +470,6 @@ public class HomePageActivity extends AppCompatActivity implements GetRequestLis
     private boolean allPermissions() {
         return ContextCompat.checkSelfPermission(HomePageActivity.this, "android.permission.INTERNET") == 0;
     }
-
-   /* private boolean accees_fine() {
-        return ContextCompat.checkSelfPermission(HomePageActivity.this, "android.permission.ACCESS_FINE_LOCATION") == 0;
-    }
-
-    private boolean acess_crose() {
-        return ContextCompat.checkSelfPermission(HomePageActivity.this, "android.permission.ACCESS_COARSE_LOCATION") == 0;
-    }*/
 
     private boolean statePermissions() {
         return ContextCompat.checkSelfPermission(HomePageActivity.this, "android.permission.ACCESS_NETWORK_STATE") == 0;
@@ -431,10 +495,6 @@ public class HomePageActivity extends AppCompatActivity implements GetRequestLis
         return ContextCompat.checkSelfPermission(HomePageActivity.this, "android.permission.BLUETOOTH") == 0;
     }
 
-   /* private boolean WRITE_EXTERNAL_STORAGE() {
-        return ContextCompat.checkSelfPermission(HomePageActivity.this, "android.permission.WRITE_EXTERNAL_STORAGE") == 0;
-    }*/
-
     private boolean system_sto() {
         return ContextCompat.checkSelfPermission(HomePageActivity.this, "android.permission.SYSTEM_ALERT_WINDOW") == 0;
     }
@@ -442,10 +502,6 @@ public class HomePageActivity extends AppCompatActivity implements GetRequestLis
     private boolean CAPTURE_VIDEO_OUTPUT() {
         return ContextCompat.checkSelfPermission(HomePageActivity.this, "android.permission.CAPTURE_VIDEO_OUTPUT") == 0;
     }
-
- /*   private boolean READ_EXTERNAL_STORAGE() {
-        return ContextCompat.checkSelfPermission(HomePageActivity.this, "android.permission.READ_EXTERNAL_STORAGE") == 0;
-    }*/
 
     public void goToMain() {
         AppPermissions();
@@ -458,13 +514,16 @@ public class HomePageActivity extends AppCompatActivity implements GetRequestLis
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         dialog.setCancelable(false);
         RatingBar simpleRatingBar = (RatingBar) dialog.findViewById(R.id.rb_stars);
-
+        ((LinearLayout) dialog.findViewById(com.unisob.vclibs.R.id.bt_later)).setBackground(gd2);
         ((LinearLayout) dialog.findViewById(com.unisob.vclibs.R.id.bt_later)).setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
                 if (simpleRatingBar.getRating() == 1 || simpleRatingBar.getRating() == 2 || simpleRatingBar.getRating() == 3 || simpleRatingBar.getRating() == 4) {
 
                     findViewById(R.id.btn_click).setVisibility(View.VISIBLE);
+                    findViewById(R.id.btn_click2).setVisibility(View.VISIBLE);
+                    findViewById(R.id.txtConnect).setVisibility(View.VISIBLE);
+
                     call_timer_layout.setVisibility(View.GONE);
 
                     SharedPreferences.Editor editor = getSharedPreferences("MY_PREFS_NAME", MODE_PRIVATE).edit();
@@ -480,6 +539,9 @@ public class HomePageActivity extends AppCompatActivity implements GetRequestLis
 
                 } else if (simpleRatingBar.getRating() == 5) {
                     findViewById(R.id.btn_click).setVisibility(View.VISIBLE);
+                    findViewById(R.id.btn_click2).setVisibility(View.VISIBLE);
+                    findViewById(R.id.txtConnect).setVisibility(View.VISIBLE);
+
                     call_timer_layout.setVisibility(View.GONE);
                     SharedPreferences.Editor editor = getSharedPreferences("MY_PREFS_NAME", MODE_PRIVATE).edit();
                     editor.putBoolean("rate_state", true);
@@ -496,7 +558,7 @@ public class HomePageActivity extends AppCompatActivity implements GetRequestLis
         ((LinearLayout) dialog.findViewById(com.unisob.vclibs.R.id.Maybe)).setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 dialog.dismiss();
-                myCountdownTimer = new CountDownTimer(10000, 1000) {
+                myCountdownTimer = new CountDownTimer(7000, 1000) {
 
                     public void onTick(long millisUntilFinished) {
                         timer.setText("00:0" + millisUntilFinished / 1000);
@@ -505,6 +567,9 @@ public class HomePageActivity extends AppCompatActivity implements GetRequestLis
                     public void onFinish() {
                         myCountdownTimer.cancel();
                         findViewById(R.id.btn_click).setVisibility(View.VISIBLE);
+                        findViewById(R.id.btn_click2).setVisibility(View.VISIBLE);
+                        findViewById(R.id.txtConnect).setVisibility(View.VISIBLE);
+
                         call_timer_layout.setVisibility(View.GONE);
                     }
                 }.start();
@@ -514,21 +579,5 @@ public class HomePageActivity extends AppCompatActivity implements GetRequestLis
         });
         dialog.show();
     }
-
-    /*public void openChromeCustomTabUrl() {
-        try {
-            CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
-            int coolorInt = Color.parseColor("#ffffff");
-            builder.setToolbarColor(coolorInt);
-            CustomTabsIntent customTabsIntent = builder.build();
-            customTabsIntent.intent.setPackage("com.android.chrome");
-            customTabsIntent.intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            customTabsIntent.launchUrl(getApplicationContext(), Uri.parse(Qureka_Link));
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }*/
-
 }
 

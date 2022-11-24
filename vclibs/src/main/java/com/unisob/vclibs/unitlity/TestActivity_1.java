@@ -36,6 +36,7 @@ import androidx.databinding.DataBindingUtil;
 
 import com.unisob.vclibs.R;
 import com.unisob.vclibs.activties.HomePageActivity;
+import com.unisob.vclibs.activties.VideoPlayerActivity;
 import com.unisob.vclibs.databinding.ActivityTest1Binding;
 
 import org.json.JSONException;
@@ -593,7 +594,20 @@ public class TestActivity_1 extends AppCompatActivity {
                     onBackPressed();
                     dialog.dismiss();
                 } else {
-                    Toast.makeText(TestActivity_1.this, "Select Reason", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TestActivity_1.this, "Select Report Reason", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        dialog.show();
+
+        ((TextView) dialog.findViewById(R.id.reblack)).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                if (c1.isChecked() || c2.isChecked() || c3.isChecked() || c4.isChecked() || c5.isChecked() || c6.isChecked() || c7.isChecked()) {
+                    Toast.makeText(getApplicationContext(), "User Blocked", Toast.LENGTH_SHORT).show();
+                    onBackPressed();
+                    dialog.dismiss();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Select Block Reason", Toast.LENGTH_SHORT).show();
                 }
             }
         });

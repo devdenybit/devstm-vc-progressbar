@@ -7,12 +7,15 @@
     tools:context=".activties.HomePageActivity">
 
     <LinearLayout
+        android:id="@+id/lnrsbg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/banr"
+        android:background="@color/colorPrimary"
         android:orientation="vertical">
 
         <RelativeLayout
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_35sdp">
 
@@ -37,7 +40,7 @@
                 android:layout_marginBottom="@dimen/_3sdp"
                 android:gravity="center"
                 android:text="Video Call"
-                android:textColor="#000000"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_15sdp"
                 android:textStyle="bold" />
 
@@ -69,6 +72,123 @@
                     <include layout="@layout/all_native" />
                 </LinearLayout>
 
+                <TextView
+                    android:id="@+id/txtConnect"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/content1"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center"
+                    android:text="Click To Make Call"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_15sdp"
+                    android:layout_below="@+id/txtConnect"
+                    android:layout_above="@+id/termcondition"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <RelativeLayout
+                        android:id="@+id/btn_click"
+                        android:layout_width="230dp"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="@drawable/border_ten"
+                        android:elevation="5dp">
+
+                        <ImageView
+                            android:id="@+id/image"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/on_videos"
+                          />
+
+                        <TextView
+                            android:id="@+id/server1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginRight="30dp"
+                            android:layout_toLeftOf="@+id/image"
+                            android:gravity="center"
+                            android:text="Server 1 Call"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btn_click2"
+                        android:layout_width="230dp"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="@drawable/border_ten"
+                        android:elevation="5dp">
+
+                        <ImageView
+                            android:id="@+id/image2"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/on_videos" />
+
+                        <TextView
+                            android:id="@+id/server2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginRight="30dp"
+                            android:layout_toLeftOf="@+id/image2"
+                            android:gravity="center"
+                            android:text="Server 2 Call"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/termcondition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lineSpacingMultiplier="1.2"
+                        android:text="By using Live video Call you must agree with Our Terms Conditions.Try to keep your face visible. Violators of Terms will be Permanently blocked."
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/privacypolicy"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|right"
+                        android:background="@drawable/icon_make_call"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="Privacy Policy" />
+
+
+                </LinearLayout>
+
+
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -84,6 +204,7 @@
                         android:visibility="gone">
 
                         <com.airbnb.lottie.LottieAnimationView
+                            android:visibility="gone"
                             android:id="@+id/animationView"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/_130sdp"
@@ -97,26 +218,26 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="You Can Call In"
-                            android:textSize="22sp"
+                            android:textSize="@dimen/_20sdp"
+                            android:textColor="#FFFFFF"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/timer"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/_40sdp"
+                            android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginTop="@dimen/_10sdp"
                             android:fontFamily="monospace"
-
                             android:gravity="center"
                             android:text="00:00"
-                            android:textColor="#E91E63"
-                            android:textSize="32sp"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/_50sdp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
 
-                    <TextView
+                  <!--  <TextView
                         android:id="@+id/btn_click"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_40sdp"
@@ -129,7 +250,7 @@
                         android:text="Video Call"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_12sdp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold" />-->
 
                     <!--                    <TextView-->
                     <!--                        android:id="@+id/btn_click"-->
@@ -157,6 +278,7 @@
         android:id="@+id/banr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal">
 

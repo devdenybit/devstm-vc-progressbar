@@ -70,6 +70,13 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing|stateAlwaysHidden|stateHidden" />
+
+        <activity
+            android:name="com.unisob.vclibs.activties.PravacyPolicyActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing|stateAlwaysHidden|stateHidden" />
+
         <activity
             android:name="com.unisob.vclibs.activties.VideoPlayerActivity"
             android:launchMode="singleTop"

@@ -599,7 +599,20 @@ public class TestActivity_5 extends AppCompatActivity {
                     onBackPressed();
                     dialog.dismiss();
                 } else {
-                    Toast.makeText(TestActivity_5.this, "Select Reason", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TestActivity_5.this, "Select Report Reason", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        dialog.show();
+
+        ((TextView) dialog.findViewById(R.id.reblack)).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                if (c1.isChecked() || c2.isChecked() || c3.isChecked() || c4.isChecked() || c5.isChecked() || c6.isChecked() || c7.isChecked()) {
+                    Toast.makeText(getApplicationContext(), "User Blocked", Toast.LENGTH_SHORT).show();
+                    onBackPressed();
+                    dialog.dismiss();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Select Block Reason", Toast.LENGTH_SHORT).show();
                 }
             }
         });

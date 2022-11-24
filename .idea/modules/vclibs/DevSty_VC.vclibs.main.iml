@@ -25,8 +25,10 @@
     <content url="file://$MODULE_DIR$/../../../vclibs/build/generated/ap_generated_sources/debug/out">
       <sourceFolder url="file://$MODULE_DIR$/../../../vclibs/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../vclibs/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../vclibs/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
     </content>
     <content url="file://$MODULE_DIR$/../../../vclibs/build/generated/data_binding_trigger/debug">
+      <sourceFolder url="file://$MODULE_DIR$/../../../vclibs/build/generated/data_binding_trigger/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../vclibs/build/generated/data_binding_trigger/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../vclibs/build/generated/data_binding_trigger/debug" isTestSource="false" generated="true" />
     </content>
@@ -36,6 +38,7 @@
     </content>
     <content url="file://$MODULE_DIR$/../../../vclibs/build/generated/res/rs/debug" />
     <content url="file://$MODULE_DIR$/../../../vclibs/build/generated/source/buildConfig/debug">
+      <sourceFolder url="file://$MODULE_DIR$/../../../vclibs/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../vclibs/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../vclibs/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
     </content>
