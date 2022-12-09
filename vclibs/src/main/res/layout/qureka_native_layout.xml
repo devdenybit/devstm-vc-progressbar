@@ -7,13 +7,12 @@
     android:layout_height="@dimen/_250sdp"
     android:visibility="gone"
     android:layout_margin="@dimen/_2sdp"
-    android:background="@android:color/transparent"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cardCornerRadius="5dp">
+        app:cardBackgroundColor="#F3F3F3">
 
         <!--<LinearLayout
             android:layout_width="match_parent"
@@ -24,7 +23,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:background="#F3F3F3"
             android:orientation="vertical">
 
             <!--  <RelativeLayout
@@ -49,6 +47,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:background="@color/white"
                     android:paddingLeft="@dimen/_5sdp">
 
                     <TextView
@@ -143,7 +142,7 @@
                     android:id="@+id/ad_call_to_action"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_40sdp"
-                    android:background="#008EFF"
+                    android:background="#1E86D8"
                     android:layout_margin="@dimen/_2sdp"
                     android:gravity="center"
                     android:text="Install"
@@ -153,53 +152,7 @@
 
 
             </LinearLayout>
-
-            <!-- <LinearLayout
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:orientation="vertical">
-
-
-                        &lt;!&ndash; <LinearLayout
-                             android:layout_width="match_parent"
-                             android:layout_height="match_parent"
-                             android:orientation="vertical">&ndash;&gt;
-
-
-                             <ImageView
-                                 android:id="@+id/ad_image"
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content" />
-
-                             <TextView
-                                 android:id="@+id/ad_subheadline2"
-                                 android:layout_width="wrap_content"
-                                 android:layout_height="wrap_content"
-                                 android:ellipsize="end"
-                                 android:maxLines="2"
-                                 android:paddingLeft="10dp"
-                                 android:text="@string/app_name"
-                                 android:textSize="10sp" />
-
-
-                             <TextView
-                                 android:id="@+id/ad_call_to_action"
-                                 android:layout_width="match_parent"
-                                 android:layout_height="@dimen/_40sdp"
-                                 android:background="#008EFF"
-                                 android:layout_margin="@dimen/_2sdp"
-                                 android:gravity="center"
-                                 android:text="Install"
-                                 android:textColor="@android:color/white"
-                                 android:textSize="18sp" />
-
-                      &lt;!&ndash;   </LinearLayout>&ndash;&gt;
-
-
-                 </LinearLayout>-->
-            <!--</RelativeLayout>-->
         </LinearLayout>
-        <!--</LinearLayout>-->
 
     </androidx.cardview.widget.CardView>
 

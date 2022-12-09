@@ -35,6 +35,8 @@
                         android:layout_height="@dimen/_30sdp"
                         android:layout_gravity="end"
                         android:gravity="center|end"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
                         android:onClick="TBtnReportUser"
                         android:padding="@dimen/_5sdp"
                         android:src="@drawable/report" />

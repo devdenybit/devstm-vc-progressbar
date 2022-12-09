@@ -98,7 +98,7 @@ public class AppManage {
     public static String Native_Ad_Shape_Normal_Round_Btn = "";
 
     public static String Banner_Ads_On = "";
-    public static String Exit_Ad_Interstitial = "";
+    public static String Native_Ads_On = "";
 
     public static String app_failData = "";
     public static String app_DataIOSocketFail = "";
@@ -119,7 +119,7 @@ public class AppManage {
     public static String ADMOB_I2 = "";
     public static String ADMOB_I3 = "";
     public static String ADMOB_I4 = "";
-    public static String ADMOB_I5 = "";
+    // public static String ADMOB_I5 = "";
 
     public static String[] ADMOB_N = {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""};
     public static String ADMOB_N0 = "";
@@ -127,12 +127,12 @@ public class AppManage {
     public static String ADMOB_N2 = "";
     public static String ADMOB_N3 = "";
     public static String ADMOB_N4 = "";
-    public static String ADMOB_N5 = "";
-    public static String ADMOB_N6 = "";
-    public static String ADMOB_N7 = "";
-    public static String ADMOB_N8 = "";
-    public static String ADMOB_N9 = "";
-    public static String ADMOB_N10 = "";
+    //  public static String ADMOB_N5 = "";
+    // public static String ADMOB_N6 = "";
+    // public static String ADMOB_N7 = "";
+    // public static String ADMOB_N8 = "";
+    // public static String ADMOB_N9 = "";
+    // public static String ADMOB_N10 = "";
 
 
     public static String[] FACEBOOK_I = {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""};
@@ -178,8 +178,6 @@ public class AppManage {
     public static String app_onesingle_appid = "";
     public static int maxvidcount;
 
-    public static String app_CustomeADOnly = "";
-    public static String app_CustomeADInterstitalDailog = "";
     public static String app_CustomeADText = "";
 
     public static String app_CustomeAdInterstitialLink = "";
@@ -200,8 +198,10 @@ public class AppManage {
     public static String app_CustomeAdBannerSubHanderText = "";
     public static String app_CustomeADBannerLink = "";
 
-    public static String app_BothNAtiveAreADShow = "";
-    public static String app_BothBannerAreADShow = "";
+    public static String app_OnlyInterstitalADShow = "";
+    public static String app_OnlyFailInterstitalADShow = "";
+    public static String app_OnlyNativeADShow = "";
+    public static String app_OnlyBannerADShow = "";
 
 
     public static void Server_Variables(JSONObject response) {
@@ -224,13 +224,15 @@ public class AppManage {
             Native_Ad_Shape_Normal_Round_Btn = response.getJSONObject("EXTRA_DATA").getString("Native_Ad_Shape_Normal_Round_Btn");
 
             Banner_Ads_On = response.getJSONObject("EXTRA_DATA").getString("Banner_Ads_On");
-            Exit_Ad_Interstitial = response.getJSONObject("EXTRA_DATA").getString("Exit_Ad_Interstitial");
+            Native_Ads_On = response.getJSONObject("EXTRA_DATA").getString("Native_Ads_On");
 
-            app_CustomeADOnly = response.getJSONObject("EXTRA_DATA").getString("app_CustomeADOnly");
-            app_CustomeADInterstitalDailog = response.getJSONObject("EXTRA_DATA").getString("app_CustomeADInterstitalDailog");
+            //  app_CustomeADOnly = response.getJSONObject("EXTRA_DATA").getString("app_CustomeADOnly");
+            //   app_CustomeADInterstitalDailog = response.getJSONObject("EXTRA_DATA").getString("app_CustomeADInterstitalDailog");
 
-            app_BothNAtiveAreADShow = response.getJSONObject("EXTRA_DATA").getString("app_BothNAtiveAreADShow");
-            app_BothBannerAreADShow = response.getJSONObject("EXTRA_DATA").getString("app_BothBannerAreADShow");
+            app_OnlyInterstitalADShow = response.getJSONObject("EXTRA_DATA").getString("app_OnlyInterstitalADShow");
+            app_OnlyFailInterstitalADShow = response.getJSONObject("EXTRA_DATA").getString("app_OnlyFailInterstitalADShow");
+            app_OnlyNativeADShow = response.getJSONObject("EXTRA_DATA").getString("app_OnlyNativeADShow");
+            app_OnlyBannerADShow = response.getJSONObject("EXTRA_DATA").getString("app_OnlyBannerADShow");
 
             app_CustomeADText = response.getJSONObject("EXTRA_DATA").getString("app_CustomeADText");
 
@@ -251,7 +253,6 @@ public class AppManage {
             app_CustomeAdBannerHanderText = response.getJSONObject("EXTRA_DATA").getString("app_CustomeAdBannerHanderText");
             app_CustomeAdBannerSubHanderText = response.getJSONObject("EXTRA_DATA").getString("app_CustomeAdBannerSubHanderText");
             app_CustomeADBannerLink = response.getJSONObject("EXTRA_DATA").getString("app_CustomeADBannerLink");
-
 
 
         } catch (Exception e) {
@@ -392,7 +393,6 @@ public class AppManage {
 
         if (facebook_AdStatus == 1) {
             AudienceNetworkAds.initialize(activity);
-
             AdSettings.addTestDevice("HASHED ID");
         }
 
@@ -542,19 +542,19 @@ public class AppManage {
                 ADMOB_N2 = AdmobJsonObject.getString("Native3");
                 ADMOB_N3 = AdmobJsonObject.getString("Native4");
                 ADMOB_N4 = AdmobJsonObject.getString("Native5");
-                ADMOB_N5 = AdmobJsonObject.getString("Native6");
-                ADMOB_N6 = AdmobJsonObject.getString("Native7");
-                ADMOB_N7 = AdmobJsonObject.getString("Native8");
-                ADMOB_N8 = AdmobJsonObject.getString("Native9");
-                ADMOB_N9 = AdmobJsonObject.getString("Native10");
-                ADMOB_N10 = AdmobJsonObject.getString("Native11");
+                //  ADMOB_N5 = AdmobJsonObject.getString("Native6");
+                //  ADMOB_N6 = AdmobJsonObject.getString("Native7");
+                // ADMOB_N7 = AdmobJsonObject.getString("Native8");
+                // ADMOB_N8 = AdmobJsonObject.getString("Native9");
+                //  ADMOB_N9 = AdmobJsonObject.getString("Native10");
+                // ADMOB_N10 = AdmobJsonObject.getString("Native11");
 
                 ADMOB_I0 = AdmobJsonObject.getString("Interstitial1");
                 ADMOB_I1 = AdmobJsonObject.getString("Interstitial2");
                 ADMOB_I2 = AdmobJsonObject.getString("Interstitial3");
                 ADMOB_I3 = AdmobJsonObject.getString("Interstitial4");
                 ADMOB_I4 = AdmobJsonObject.getString("Interstitial5");
-                ADMOB_I5 = AdmobJsonObject.getString("Interstitial6");
+                //  ADMOB_I5 = AdmobJsonObject.getString("Interstitial6");
 
 
                 SharedPreferences.Editor editor1 = mysharedpreferences.edit();
@@ -672,36 +672,41 @@ public class AppManage {
         return adId;
     }
 
-    public void customeAdCall(Activity activity) {
-        LinearLayout native_container = activity.findViewById(R.id.native_container);
-        if (app_BothNAtiveAreADShow.equalsIgnoreCase("true")) {
-            native_container.setVisibility(View.VISIBLE);
-        } else {
-            native_container.setVisibility(View.GONE);
+
+    public void onlyCustBannerCallAD(Activity activity) {
+        if (app_OnlyBannerADShow.equalsIgnoreCase("true")) {
+            LinearLayout iv_qurekabanner = activity.findViewById(R.id.iv_qurekabanner);
+            ImageView nbanner_icon_view = activity.findViewById(R.id.nbanner_icon_view);
+            TextView banner_ad_title = activity.findViewById(R.id.banner_ad_title);
+            TextView banner_subhander = activity.findViewById(R.id.banner_subhander);
+            TextView bner_install = activity.findViewById(R.id.bner_install);
+
+            iv_qurekabanner.setVisibility(View.VISIBLE);
+            Glide.with(activity).load(app_CustomeAdBannerIcon).into(nbanner_icon_view);
+            banner_ad_title.setText(app_CustomeAdBannerHanderText);
+            banner_subhander.setText(app_CustomeAdBannerSubHanderText);
+            bner_install.setText(app_CustomeAdBannerInstallText);
+
+            iv_qurekabanner.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    openChromeCustomTabUrl(activity, app_CustomeADBannerLink);
+                }
+            });
         }
-        LinearLayout iv_qurekanative = activity.findViewById(R.id.iv_qurekanative);
-        ImageView ad_app_icon = activity.findViewById(R.id.ad_app_icon);
-        ImageView ad_image = activity.findViewById(R.id.ad_image);
-        TextView ad_headline = activity.findViewById(R.id.ad_headline);
-        TextView ad_subheadline = activity.findViewById(R.id.ad_subheadline);
-        TextView ad_subheadline2 = activity.findViewById(R.id.ad_subheadline2);
-        TextView ad_call_to_action = activity.findViewById(R.id.ad_call_to_action);
+    }
 
-        LinearLayout banner_container = activity.findViewById(R.id.banner_container);
-        if (app_BothBannerAreADShow.equalsIgnoreCase("true")) {
-            banner_container.setVisibility(View.VISIBLE);
-        } else {
-            banner_container.setVisibility(View.GONE);
-        }
-        LinearLayout iv_qurekabanner = activity.findViewById(R.id.iv_qurekabanner);
-        ImageView nbanner_icon_view = activity.findViewById(R.id.nbanner_icon_view);
-        TextView banner_ad_title = activity.findViewById(R.id.banner_ad_title);
-        TextView banner_subhander = activity.findViewById(R.id.banner_subhander);
-        TextView bner_install = activity.findViewById(R.id.bner_install);
+    public void onlyCustNativeCallAD(Activity activity) {
 
+        if (app_OnlyNativeADShow.equalsIgnoreCase("true")) {
+            LinearLayout iv_qurekanative = activity.findViewById(R.id.iv_qurekanative);
+            ImageView ad_app_icon = activity.findViewById(R.id.ad_app_icon);
+            ImageView ad_image = activity.findViewById(R.id.ad_image);
+            TextView ad_headline = activity.findViewById(R.id.ad_headline);
+            TextView ad_subheadline = activity.findViewById(R.id.ad_subheadline);
+            TextView ad_subheadline2 = activity.findViewById(R.id.ad_subheadline2);
+            TextView ad_call_to_action = activity.findViewById(R.id.ad_call_to_action);
 
-
-        if (app_CustomeADOnly.equalsIgnoreCase("true")) {
             iv_qurekanative.setVisibility(View.VISIBLE);
             Glide.with(activity).load(app_CustomeAdNativeLargeImage).into(ad_image);
             Glide.with(activity).load(app_CustomeAdNativeIconImage).into(ad_app_icon);
@@ -710,18 +715,21 @@ public class AppManage {
             ad_subheadline2.setText(app_CustomeAdNativesubHander2);
             ad_call_to_action.setText(app_CustomeAdNativeInstallText);
 
-            iv_qurekabanner.setVisibility(View.VISIBLE);
-            Glide.with(activity).load(app_CustomeAdBannerIcon).into(nbanner_icon_view);
-            banner_ad_title.setText(app_CustomeAdBannerHanderText);
-            banner_subhander.setText(app_CustomeAdBannerSubHanderText);
-            bner_install.setText(app_CustomeAdBannerInstallText);
 
+            iv_qurekanative.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    openChromeCustomTabUrl(activity, app_CustomeADNativeLink);
+                }
+            });
+        }
+    }
 
-
+    public void onlyCustInterstitialCallAD(Activity activity) {
+        if (app_OnlyInterstitalADShow.equalsIgnoreCase("true")) {
             if (app_CustomeADText.equalsIgnoreCase("Qureka")) {
                 displayQurekaInterstitialAd(activity, app_CustomeAdQurekaLink);
             } else if (app_CustomeADText.equalsIgnoreCase("Custome")) {
-
                 Rect displayRectangle = new Rect();
                 Window window = activity.getWindow();
                 window.getDecorView().getWindowVisibleDisplayFrame(displayRectangle);
@@ -758,33 +766,52 @@ public class AppManage {
                     }
                 });
                 alertDialog.show();
-
-            } else {
-                displayQurekaInterstitialAd(activity, app_CustomeAdQurekaLink);
             }
-        } else {
-
-            // else condition
-            // fbInterstitialAd(activity);
-            // fbBanner(activity);
-            //  fbNativeAD(activity);
         }
+    }
 
-        iv_qurekanative.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openChromeCustomTabUrl(activity, app_CustomeADNativeLink);
-            }
-        });
+    public void onlyCustFailInterstitialCallAD(Activity activity) {
+        if (app_CustomeADText.equalsIgnoreCase("Qureka")) {
+            displayQurekaInterstitialAd(activity, app_CustomeAdQurekaLink);
+        } else if (app_CustomeADText.equalsIgnoreCase("Custome")) {
+            Rect displayRectangle = new Rect();
+            Window window = activity.getWindow();
+            window.getDecorView().getWindowVisibleDisplayFrame(displayRectangle);
+            final AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+            ViewGroup viewGroup = activity.findViewById(android.R.id.content);
+            View dialogView = LayoutInflater.from(activity).inflate(R.layout.custom_ad_interstitla, viewGroup, false);
+            dialogView.setMinimumWidth((int) (displayRectangle.width() * 1f));
+            dialogView.setMinimumHeight((int) (displayRectangle.height() * 1f));
+            builder.setView(dialogView);
+            final AlertDialog alertDialog = builder.create();
+            LinearLayout intest_layout = dialogView.findViewById(R.id.intest_layout);
+            intest_layout.setVisibility(View.VISIBLE);
+            ImageView iv_intersFullImage = dialogView.findViewById(R.id.iv_intersFullImage);
+            LottieAnimationView iv_intersFullImageCancel = dialogView.findViewById(R.id.iv_intersFullImageCancel);
 
-        iv_qurekabanner.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openChromeCustomTabUrl(activity, app_CustomeADBannerLink);
-            }
-        });
+            Glide.with(activity).load(app_CustomeAdInterFullscreenImg).into(iv_intersFullImage);
 
+            iv_intersFullImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    alertDialog.dismiss();
+                    try {
+                        activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(app_CustomeAdInterstitialLink)));
+                    } catch (ActivityNotFoundException e) {
+                        activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(app_CustomeAdInterstitialLink)));
+                    }
+                }
+            });
 
+            iv_intersFullImageCancel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    alertDialog.dismiss();
+                }
+            });
+            alertDialog.show();
+
+        }
     }
 
     public void displayQurekaInterstitialAd(final Context context, String s) {
@@ -795,12 +822,12 @@ public class AppManage {
         dialog.setCancelable(false);
         Window window = dialog.getWindow();
 
-        if (app_CustomeADInterstitalDailog.equals("true")) {
+        if (app_dialogBeforeAdShow == 1) {
             dialog.show();
-            new CountDownTimer(2 * 1000, 10) {
+            new CountDownTimer(ad_dialog_time_in_second * 1000, 10) {
                 @Override
                 public void onTick(long millisUntilFinished) {
-                    double time = (millisUntilFinished / 10) / 2;
+                    double time = (millisUntilFinished / 10) / ad_dialog_time_in_second;
                 }
 
                 @Override
@@ -1216,76 +1243,6 @@ public class AppManage {
                         // Called when fullscreen content is dismissed.
                         Log.d("TAG", "The ad was dismissed.");
 //                        if (admob_loadAdIdsType == 2) {
-//                             google_i_pre = ADMOB_I4;
-//                        }
-//                        loadAdmobInterstitial5(activity, google_i_pre);
-                        if (admob_loadAdIdsType == 2) {
-                            google_i_pre = ADMOB_I0;
-                            if (!google_i_pre.isEmpty()) {
-                                loadAdmobInterstitial(activity, google_i_pre);
-                            }
-                        }
-                        interstitialCallBack();
-                    }
-
-                    @Override
-                    public void onAdFailedToShowFullScreenContent(com.google.android.gms.ads.AdError adError) {
-                        // Called when fullscreen content failed to show.
-                        Log.d("TAG", "The ad failed to show.");
-                    }
-
-                    @Override
-                    public void onAdShowedFullScreenContent() {
-                        // Called when fullscreen content is shown.
-                        // Make sure to set your reference to null so you don't
-                        // show it a second time.
-                        mInterstitialAd = null;
-                        Log.d("TAG", "The ad was shown.");
-                    }
-                });
-            }
-
-            @Override
-            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                // Handle the error
-                Log.i(TAG, loadAdError.getMessage());
-                mInterstitialAd = null;
-
-                if (admob_loadAdIdsType == 2) {
-                    //  google_i_pre = getHigheCPMAdId(ADMOB, "I", "Next");
-                    google_i_pre = ADMOB_I5;
-                    if (!google_i_pre.isEmpty()) {
-                        loadAdmobInterstitial6(activity, google_i_pre);
-                    }
-                }
-
-            }
-        });
-    }
-
-    public void loadAdmobInterstitial6(final Activity activity, String google_i) {
-        Log.e(TAG, "loadAdmobInterstitial6: " + google_i);
-        if (admob_loadAdIdsType == 0) {
-            google_i = getRandomPlacementId(ADMOB, "I");
-        }
-        this.google_i_pre = google_i;
-
-        AdRequest adRequest = new AdRequest.Builder().build();
-
-        InterstitialAd.load(activity, google_i, adRequest, new InterstitialAdLoadCallback() {
-            @Override
-            public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-                // The mInterstitialAd reference will be null until
-                // an ad is loaded.
-                mInterstitialAd = interstitialAd;
-                Log.i(TAG, "onAdLoaded");
-
-                mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
-                    @Override
-                    public void onAdDismissedFullScreenContent() {
-                        // Called when fullscreen content is dismissed.
-                        Log.d("TAG", "The ad was dismissed.");
-//                        if (admob_loadAdIdsType == 2) {
 //                             google_i_pre = ADMOB_I5;
 //                        }
 //                        loadAdmobInterstitial6(activity, google_i_pre);
@@ -1319,17 +1276,21 @@ public class AppManage {
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 // Handle the error
                 Log.i(TAG, loadAdError.getMessage());
-                mInterstitialAd = null;
-                if (admob_loadAdIdsType == 2) {
-                    google_i_pre = ADMOB_I0;
-                    if (!google_i_pre.isEmpty()) {
-                        loadAdmobInterstitial(activity, google_i_pre);
+                if (app_OnlyFailInterstitalADShow.equalsIgnoreCase("true")) {
+                    onlyCustFailInterstitialCallAD(activity);
+                } else {
+                    mInterstitialAd = null;
+                    if (admob_loadAdIdsType == 2) {
+                        google_i_pre = ADMOB_I0;
+                        if (!google_i_pre.isEmpty()) {
+                            loadAdmobInterstitial(activity, google_i_pre);
+                        }
                     }
-                }
-
+               }
             }
         });
     }
+
 
     public String getRandomPlacementId(String platform, String adFormat) {
         String return_adId = "";
@@ -1571,7 +1532,7 @@ public class AppManage {
                 nextInterstitialPlatform(context);
             }
 
-        }  else {
+        } else {
 
             nextInterstitialPlatform(context);
 
@@ -1819,7 +1780,9 @@ public class AppManage {
     }
 
     public void showNative(ViewGroup nativeAdContainer, String admobN, String facebookN) {
-        turnShowNative(nativeAdContainer, admobN, facebookN);
+        if (Native_Ads_On.equals("true")) {
+            turnShowNative(nativeAdContainer, admobN, facebookN);
+        }
     }
 
     public void showNative(ViewGroup nativeAdContainer) {
@@ -2221,230 +2184,15 @@ public class AppManage {
             nextNativePlatform(nativeAdContainer);
             return;
         }
+
         if (admobNativeAd_preLoad == null) {
             final AdLoader adLoaders = new AdLoader.Builder(activity, admobN4)
                     .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
                         @Override
                         public void onNativeAdLoaded(NativeAd nativeAd) {
                             // Show the ad.
+
                             inflate_NATIV_ADMOB(nativeAd, nativeAdContainer, admobN4);
-                        }
-                    })
-                    .withAdListener(new AdListener() {
-                        @Override
-                        public void onAdFailedToLoad(LoadAdError adError) {
-                            // Handle the failure by logging, altering the UI, and so on.
-                            showDiAdmobNative5(nativeAdContainer, ADMOB_N5);
-                        }
-                    })
-                    .withNativeAdOptions(new NativeAdOptions.Builder()
-                            // Methods in the NativeAdOptions.Builder class can be
-                            // used here to specify individual options settings.
-                            .build())
-                    .build();
-            adLoaders.loadAd(new AdRequest.Builder().build());
-        } else {
-            state_admobNative = "Start";
-            inflate_NATIV_ADMOB(admobNativeAd_preLoad, nativeAdContainer, admobN4);
-        }
-    }
-
-    @SuppressLint("MissingPermission")
-    public void showDiAdmobNative5(final ViewGroup nativeAdContainer, String admobN5) {
-        Log.e(TAG, "showDiAdmobNative5: " + admobN5);
-        if (admobN5.isEmpty() || admob_AdStatus == 0) {
-            nextNativePlatform(nativeAdContainer);
-            return;
-        }
-        if (admobNativeAd_preLoad == null) {
-            final AdLoader adLoaders = new AdLoader.Builder(activity, admobN5)
-                    .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
-                        @Override
-                        public void onNativeAdLoaded(NativeAd nativeAd) {
-                            // Show the ad.
-                            inflate_NATIV_ADMOB(nativeAd, nativeAdContainer, admobN5);
-                        }
-                    })
-                    .withAdListener(new AdListener() {
-                        @Override
-                        public void onAdFailedToLoad(LoadAdError adError) {
-                            // Handle the failure by logging, altering the UI, and so on.
-                            showDiAdmobNative6(nativeAdContainer, ADMOB_N6);
-                        }
-                    })
-
-                    .withNativeAdOptions(new NativeAdOptions.Builder()
-                            // Methods in the NativeAdOptions.Builder class can be
-                            // used here to specify individual options settings.
-                            .build())
-                    .build();
-            adLoaders.loadAd(new AdRequest.Builder().build());
-        } else {
-            state_admobNative = "Start";
-            inflate_NATIV_ADMOB(admobNativeAd_preLoad, nativeAdContainer, admobN5);
-        }
-    }
-
-    @SuppressLint("MissingPermission")
-    public void showDiAdmobNative6(final ViewGroup nativeAdContainer, String admobN6) {
-        Log.e(TAG, "showDiAdmobNative6: " + admobN6);
-        if (admobN6.isEmpty() || admob_AdStatus == 0) {
-            nextNativePlatform(nativeAdContainer);
-            return;
-        }
-        if (admobNativeAd_preLoad == null) {
-            final AdLoader adLoaders = new AdLoader.Builder(activity, admobN6)
-                    .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
-                        @Override
-                        public void onNativeAdLoaded(NativeAd nativeAd) {
-                            // Show the ad.
-                            inflate_NATIV_ADMOB(nativeAd, nativeAdContainer, admobN6);
-                        }
-                    })
-                    .withAdListener(new AdListener() {
-                        @Override
-                        public void onAdFailedToLoad(LoadAdError adError) {
-                            // Handle the failure by logging, altering the UI, and so on.
-                            showDiAdmobNative7(nativeAdContainer, ADMOB_N7);
-                        }
-                    })
-
-                    .withNativeAdOptions(new NativeAdOptions.Builder()
-                            // Methods in the NativeAdOptions.Builder class can be
-                            // used here to specify individual options settings.
-                            .build())
-                    .build();
-            adLoaders.loadAd(new AdRequest.Builder().build());
-        } else {
-            state_admobNative = "Start";
-            inflate_NATIV_ADMOB(admobNativeAd_preLoad, nativeAdContainer, admobN6);
-        }
-    }
-
-    @SuppressLint("MissingPermission")
-    public void showDiAdmobNative7(final ViewGroup nativeAdContainer, String admobN7) {
-        Log.e(TAG, "showDiAdmobNative7: " + admobN7);
-        if (admobN7.isEmpty() || admob_AdStatus == 0) {
-            nextNativePlatform(nativeAdContainer);
-            return;
-        }
-        if (admobNativeAd_preLoad == null) {
-            final AdLoader adLoaders = new AdLoader.Builder(activity, admobN7)
-                    .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
-                        @Override
-                        public void onNativeAdLoaded(NativeAd nativeAd) {
-                            // Show the ad.
-                            inflate_NATIV_ADMOB(nativeAd, nativeAdContainer, admobN7);
-                        }
-                    })
-                    .withAdListener(new AdListener() {
-                        @Override
-                        public void onAdFailedToLoad(LoadAdError adError) {
-                            // Handle the failure by logging, altering the UI, and so on.
-                            showDiAdmobNative8(nativeAdContainer, ADMOB_N8);
-                        }
-                    })
-
-                    .withNativeAdOptions(new NativeAdOptions.Builder()
-                            // Methods in the NativeAdOptions.Builder class can be
-                            // used here to specify individual options settings.
-                            .build())
-                    .build();
-            adLoaders.loadAd(new AdRequest.Builder().build());
-        } else {
-            state_admobNative = "Start";
-            inflate_NATIV_ADMOB(admobNativeAd_preLoad, nativeAdContainer, admobN7);
-        }
-    }
-
-    @SuppressLint("MissingPermission")
-    public void showDiAdmobNative8(final ViewGroup nativeAdContainer, String admobN8) {
-        Log.e(TAG, "showDiAdmobNative8: " + admobN8);
-        if (admobN8.isEmpty() || admob_AdStatus == 0) {
-            nextNativePlatform(nativeAdContainer);
-            return;
-        }
-        if (admobNativeAd_preLoad == null) {
-            final AdLoader adLoaders = new AdLoader.Builder(activity, admobN8)
-                    .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
-                        @Override
-                        public void onNativeAdLoaded(NativeAd nativeAd) {
-                            // Show the ad.
-                            inflate_NATIV_ADMOB(nativeAd, nativeAdContainer, admobN8);
-                        }
-                    })
-                    .withAdListener(new AdListener() {
-                        @Override
-                        public void onAdFailedToLoad(LoadAdError adError) {
-                            // Handle the failure by logging, altering the UI, and so on.
-                            showDiAdmobNative9(nativeAdContainer, ADMOB_N9);
-                        }
-                    })
-
-                    .withNativeAdOptions(new NativeAdOptions.Builder()
-                            // Methods in the NativeAdOptions.Builder class can be
-                            // used here to specify individual options settings.
-                            .build())
-                    .build();
-            adLoaders.loadAd(new AdRequest.Builder().build());
-        } else {
-            state_admobNative = "Start";
-            inflate_NATIV_ADMOB(admobNativeAd_preLoad, nativeAdContainer, admobN8);
-        }
-    }
-
-    @SuppressLint("MissingPermission")
-    public void showDiAdmobNative9(final ViewGroup nativeAdContainer, String admobN9) {
-        Log.e(TAG, "showDiAdmobNative9: " + admobN9);
-        if (admobN9.isEmpty() || admob_AdStatus == 0) {
-            nextNativePlatform(nativeAdContainer);
-            return;
-        }
-        if (admobNativeAd_preLoad == null) {
-            final AdLoader adLoaders = new AdLoader.Builder(activity, admobN9)
-                    .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
-                        @Override
-                        public void onNativeAdLoaded(NativeAd nativeAd) {
-                            // Show the ad.
-                            inflate_NATIV_ADMOB(nativeAd, nativeAdContainer, admobN9);
-                        }
-                    })
-                    .withAdListener(new AdListener() {
-                        @Override
-                        public void onAdFailedToLoad(LoadAdError adError) {
-                            // Handle the failure by logging, altering the UI, and so on.
-                            showDiAdmobNative10(nativeAdContainer, ADMOB_N10);
-                        }
-                    })
-
-                    .withNativeAdOptions(new NativeAdOptions.Builder()
-                            // Methods in the NativeAdOptions.Builder class can be
-                            // used here to specify individual options settings.
-                            .build())
-                    .build();
-            adLoaders.loadAd(new AdRequest.Builder().build());
-        } else {
-            state_admobNative = "Start";
-            inflate_NATIV_ADMOB(admobNativeAd_preLoad, nativeAdContainer, admobN9);
-        }
-    }
-
-    @SuppressLint("MissingPermission")
-    public void showDiAdmobNative10(final ViewGroup nativeAdContainer, String admobN10) {
-        Log.e(TAG, "showDiAdmobNative10: " + admobN10);
-        if (admobN10.isEmpty() || admob_AdStatus == 0) {
-            nextNativePlatform(nativeAdContainer);
-            return;
-        }
-
-        if (admobNativeAd_preLoad == null) {
-            final AdLoader adLoaders = new AdLoader.Builder(activity, admobN10)
-                    .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
-                        @Override
-                        public void onNativeAdLoaded(NativeAd nativeAd) {
-                            // Show the ad.
-
-                            inflate_NATIV_ADMOB(nativeAd, nativeAdContainer, admobN10);
                         }
                     })
                     .withAdListener(new AdListener() {
@@ -2462,7 +2210,7 @@ public class AppManage {
             adLoaders.loadAd(new AdRequest.Builder().build());
         } else {
             state_admobNative = "Start";
-            inflate_NATIV_ADMOB(admobNativeAd_preLoad, nativeAdContainer, admobN10);
+            inflate_NATIV_ADMOB(admobNativeAd_preLoad, nativeAdContainer, admobN4);
         }
     }
 
@@ -2607,33 +2355,6 @@ public class AppManage {
         }
     }
 
-
-    /*public void showStartappNative(final ViewGroup nativeAdContainer) {
-        if (STARTAPP_APPID.isEmpty() || startapp_AdStatus == 0) {
-            nextNativePlatform(nativeAdContainer);
-            return;
-        }
-
-        final StartAppNativeAd startAppNativeAd = new StartAppNativeAd(activity);
-
-        AdEventListener adListener = new AdEventListener() {
-            @Override
-            public void onReceiveAd(com.startapp.android.publish.adsCommon.Ad ad) {
-                ArrayList<NativeAdDetails> ads = startAppNativeAd.getNativeAds();
-                new Inflate_ADS(activity).inflate_NATIV_STARTAPP(ads, nativeAdContainer);
-            }
-
-            @Override
-            public void onFailedToReceiveAd(com.startapp.android.publish.adsCommon.Ad ad) {
-                nextNativePlatform(nativeAdContainer);
-            }
-        };
-
-        NativeAdPreferences preferences = new NativeAdPreferences();
-        preferences.setAutoBitmapDownload(true);
-        preferences.setPrimaryImageSize(4);
-        startAppNativeAd.loadAd(preferences, adListener);
-    }*/
 
     public interface MyCallback {
         void callbackCall();

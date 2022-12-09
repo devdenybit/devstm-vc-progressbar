@@ -249,8 +249,11 @@ public class HomePageActivity extends AppCompatActivity implements GetRequestLis
         counter = sh.getInt("counter", 0);
         crandomcounter = sh.getInt("crandomcounter", 0);
 
-        AppManage.getInstance(this).showNativeBanner((ViewGroup) findViewById(R.id.banner_container), ADMOB_B[0], FACEBOOK_NB[0]);
-        AppManage.getInstance(this).showNative((ViewGroup) findViewById(R.id.native_container), ADMOB_N0, FACEBOOK_N[0]);
+        AppManage.getInstance(this).onlyCustBannerCallAD(this);
+        AppManage.getInstance(this).onlyCustNativeCallAD(this);
+        AppManage.getInstance(this).onlyCustInterstitialCallAD(this);
+        AppManage.getInstance(this).showNativeBanner((ViewGroup) findViewById(com.unisob.vclibs.R.id.banner_container), ADMOB_B[0], FACEBOOK_NB[0]);
+        AppManage.getInstance(this).showNative((ViewGroup) findViewById(com.unisob.vclibs.R.id.native_container), ADMOB_N0, FACEBOOK_N[0]);
 
         findViewById(R.id.backs).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -462,8 +465,8 @@ public class HomePageActivity extends AppCompatActivity implements GetRequestLis
     }
 
     private void AppPermissions() {
-        if (!allPermissions() || !system_sto() || !statePermissions() || !CAMERA() || !CHANGE_NETWORK_STATE() || !MODIFY_AUDIO_SETTINGS() || !RECORD_AUDIO() || !BLUETOOTH() /*|| !WRITE_EXTERNAL_STORAGE()*/ || !CAPTURE_VIDEO_OUTPUT() /*|| !READ_EXTERNAL_STORAGE()*/) {
-            ActivityCompat.requestPermissions(this, new String[]{"android.permission.CAMERA", "android.permission.SYSTEM_ALERT_WINDOW", /*"android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_COARSE_LOCATION",*/ "android.permission.CHANGE_NETWORK_STATE", "android.permission.MODIFY_AUDIO_SETTINGS", "android.permission.RECORD_AUDIO", "android.permission.BLUETOOTH", "android.permission.INTERNET", /*"android.permission.WRITE_EXTERNAL_STORAGE",*/ "android.permission.ACCESS_NETWORK_STATE", "android.permission.CAPTURE_VIDEO_OUTPUT"/*, "android.permission.READ_EXTERNAL_STORAGE"*/}, 1);
+        if (!allPermissions() || !system_sto() || !statePermissions() || !CAMERA() || !CHANGE_NETWORK_STATE() || !MODIFY_AUDIO_SETTINGS() || !RECORD_AUDIO() || !BLUETOOTH() || !CAPTURE_VIDEO_OUTPUT() ) {
+            ActivityCompat.requestPermissions(this, new String[]{"android.permission.CAMERA", "android.permission.SYSTEM_ALERT_WINDOW",  "android.permission.CHANGE_NETWORK_STATE", "android.permission.MODIFY_AUDIO_SETTINGS", "android.permission.RECORD_AUDIO", "android.permission.BLUETOOTH", "android.permission.INTERNET", "android.permission.ACCESS_NETWORK_STATE", "android.permission.CAPTURE_VIDEO_OUTPUT"}, 1);
         }
     }
 

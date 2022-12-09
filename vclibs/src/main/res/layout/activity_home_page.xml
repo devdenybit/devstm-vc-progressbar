@@ -10,7 +10,6 @@
         android:id="@+id/lnrsbg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/banr"
         android:background="@color/colorPrimary"
         android:orientation="vertical">
 
@@ -66,7 +65,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_250sdp"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
                     <include layout="@layout/all_native" />
@@ -182,6 +181,7 @@
                         android:background="@drawable/icon_make_call"
                         android:gravity="center"
                         android:padding="5dp"
+                        android:textColor="@color/black"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:text="Privacy Policy" />
 
@@ -237,52 +237,20 @@
 
                     </LinearLayout>
 
-                  <!--  <TextView
-                        android:id="@+id/btn_click"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
-                        android:layout_marginHorizontal="@dimen/_40sdp"
-                        android:layout_marginTop="@dimen/_100sdp"
-                        android:background="@drawable/bg_gradient_btn"
-                        android:foreground="@drawable/round_ripplesaure"
-                        android:gravity="center"
-                        android:letterSpacing="0.1"
-                        android:text="Video Call"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/_12sdp"
-                        android:textStyle="bold" />-->
-
-                    <!--                    <TextView-->
-                    <!--                        android:id="@+id/btn_click"-->
-                    <!--                        android:layout_width="match_parent"-->
-                    <!--                        android:layout_height="@dimen/_50sdp"-->
-                    <!--                        android:layout_marginHorizontal="20dp"-->
-                    <!--                        android:layout_marginBottom="@dimen/_50sdp"-->
-                    <!--                        android:background="@drawable/bg_round"-->
-                    <!--                        android:backgroundTint="#E91E63"-->
-                    <!--                        android:gravity="center"-->
-                    <!--                        android:text="Connect Video CAll"-->
-                    <!--                        android:textColor="@color/policy_color"-->
-                    <!--                        android:textSize="18sp"-->
-                    <!--                        android:visibility="" />-->
-
                 </RelativeLayout>
 
             </LinearLayout>
 
         </ScrollView>
 
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/banr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <LinearLayout
-        android:id="@+id/banr"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal">
-
-        <include layout="@layout/all_banner" />
+            <include layout="@layout/all_banner" />
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

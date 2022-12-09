@@ -1,7 +1,9 @@
 package com.unisob.vclibs.mads;
 
+import static com.unisob.vclibs.mads.AppManage.ADMOB_B;
 import static com.unisob.vclibs.mads.AppManage.ADMOB_N0;
 import static com.unisob.vclibs.mads.AppManage.FACEBOOK_N;
+import static com.unisob.vclibs.mads.AppManage.FACEBOOK_NB;
 import static com.unisob.vclibs.mads.AppManage.Privacy_policy_show_every_time;
 import static com.unisob.vclibs.mads.AppManage.app_onesingle_appid;
 
@@ -183,9 +185,7 @@ public class SplashActivity extends ADS_SplashActivity {
             }
         });
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            dialog.create();
-        }
+        dialog.create();
 
         dialog.show();
         Window window = dialog.getWindow();
@@ -201,7 +201,7 @@ public class SplashActivity extends ADS_SplashActivity {
         dialog.setContentView(com.unisob.vclibs.R.layout.dialog_exit_layout);
         dialog.setCancelable(false);
 
-        AppManage.getInstance(activity).showNative((ViewGroup) dialog.findViewById(R.id.native_container), ADMOB_N0, FACEBOOK_N[0]);
+        AppManage.getInstance(activity).showNative((ViewGroup) dialog.findViewById(com.unisob.vclibs.R.id.native_container), ADMOB_N0, FACEBOOK_N[0]);
 
         TextView No = dialog.findViewById(R.id.diano);
         TextView Yes = dialog.findViewById(R.id.diayes);

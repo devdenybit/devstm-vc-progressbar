@@ -16,6 +16,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "DevSty VC"
+rootProject.name = "DevSty VC3"
 include ':app'
 include ':vclibs'

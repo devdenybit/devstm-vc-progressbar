@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_2sdp"
-        app:cardCornerRadius="@dimen/_5sdp">
+        app:cardBackgroundColor="#F3F3F3"
+       >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -83,7 +84,7 @@
                         <TextView
                             android:id="@+id/bner_install"
                             android:layout_width="@dimen/_75sdp"
-                            android:layout_height="@dimen/_50sdp"
+                            android:layout_height="match_parent"
                             android:background="#1E86D8"
                             android:gravity="center"
                             android:maxLines="1"

@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DevSty_VC.iml" filepath="$PROJECT_DIR$/.idea/modules/DevSty_VC.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/DevSty_VC.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/DevSty_VC.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/DevSty_VC.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/DevSty_VC.app.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/DevSty_VC.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/DevSty_VC.app.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/DevSty_VC.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/DevSty_VC.app.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/vclibs/DevSty_VC.vclibs.iml" filepath="$PROJECT_DIR$/.idea/modules/vclibs/DevSty_VC.vclibs.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/vclibs/DevSty_VC.vclibs.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/vclibs/DevSty_VC.vclibs.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/vclibs/DevSty_VC.vclibs.main.iml" filepath="$PROJECT_DIR$/.idea/modules/vclibs/DevSty_VC.vclibs.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/vclibs/DevSty_VC.vclibs.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/vclibs/DevSty_VC.vclibs.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DevSty_VC3.iml" filepath="$PROJECT_DIR$/.idea/modules/DevSty_VC3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/DevSty_VC3.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/DevSty_VC3.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/DevSty_VC3.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/DevSty_VC3.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/DevSty_VC3.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/DevSty_VC3.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/DevSty_VC3.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/DevSty_VC3.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/vclibs/DevSty_VC3.vclibs.iml" filepath="$PROJECT_DIR$/.idea/modules/vclibs/DevSty_VC3.vclibs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/vclibs/DevSty_VC3.vclibs.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/vclibs/DevSty_VC3.vclibs.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/vclibs/DevSty_VC3.vclibs.main.iml" filepath="$PROJECT_DIR$/.idea/modules/vclibs/DevSty_VC3.vclibs.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/vclibs/DevSty_VC3.vclibs.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/vclibs/DevSty_VC3.vclibs.unitTest.iml" />
     </modules>
   </component>
 </project>

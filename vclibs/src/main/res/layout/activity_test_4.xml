@@ -37,6 +37,8 @@
                         android:gravity="center|end"
                         android:onClick="TBtnReportUser"
                         android:padding="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
                         android:src="@drawable/report" />
 
                 </FrameLayout>

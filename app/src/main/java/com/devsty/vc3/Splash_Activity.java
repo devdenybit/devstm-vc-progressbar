@@ -1,4 +1,4 @@
-package com.devsty.vc;
+package com.devsty.vc3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,7 +15,7 @@ public class Splash_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         try {
-            SplashActivity.All_Data(this, new Intent(this, Class.forName("com.devsty.vc.MainActivity")));
+            SplashActivity.All_Data(this, new Intent(this, Class.forName("com.devsty.vc3.MainActivity")));
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }

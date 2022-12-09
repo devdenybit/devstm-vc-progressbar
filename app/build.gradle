@@ -7,7 +7,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.devsty.vc"
+        applicationId "com.devsty.vc3"
         minSdk 21
         targetSdk 32
         versionCode 1
@@ -35,7 +35,7 @@ android {
         abortOnError false
         checkReleaseBuilds false
     }*/
-    namespace 'com.devsty.vc'
+    namespace 'com.devsty.vc3'
 }
 
 dependencies {
