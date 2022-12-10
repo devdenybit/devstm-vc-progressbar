@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.devsty.vc3">
+    package="com.aodmone.sormnilan">
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.front" />
@@ -21,7 +21,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
-        android:name="com.unisob.vclibs.Applicationclass"
+        android:name="com.gerop.mpsvue.Applicationclass"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -35,14 +35,14 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="32">
         <activity
-            android:name="com.devsty.vc3.MainActivity"
+            android:name="com.aodmone.sormnilan.MainActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.devsty.vc3.Splash_Activity"
+            android:name="com.aodmone.sormnilan.Splash_Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -55,30 +55,30 @@
         </activity>
 
         <activity
-            android:name="com.unisob.vclibs.mads.SplashActivity"
+            android:name="com.gerop.mpsvue.mainaods.MainSplashActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing|stateAlwaysHidden|stateHidden" />
 
         <activity
-            android:name="com.unisob.vclibs.mads.ADS_SplashActivity"
+            android:name="com.gerop.mpsvue.mainaods.Subs_SplashActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing|stateAlwaysHidden|stateHidden" />
         <activity
-            android:name="com.unisob.vclibs.activties.HomePageActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustNothing|stateAlwaysHidden|stateHidden" />
-
-        <activity
-            android:name="com.unisob.vclibs.activties.PravacyPolicyActivity"
+            android:name="com.gerop.mpsvue.activties.MainHomeActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing|stateAlwaysHidden|stateHidden" />
 
         <activity
-            android:name="com.unisob.vclibs.activties.VideoPlayerActivity"
+            android:name="com.gerop.mpsvue.activties.PravacyPolicyActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing|stateAlwaysHidden|stateHidden" />
+
+        <activity
+            android:name="com.gerop.mpsvue.activties.VideoPlayerActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing|stateAlwaysHidden|stateHidden" />
@@ -88,34 +88,34 @@
             android:value="true" />
 
         <activity
-            android:name="com.unisob.vclibs.unitlity.TestActivity_1"
+            android:name="com.gerop.mpsvue.unitlity.TestActivity_1"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.unisob.vclibs.unitlity.TestActivity_2"
+            android:name="com.gerop.mpsvue.unitlity.TestActivity_2"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.unisob.vclibs.unitlity.TestActivity_3"
+            android:name="com.gerop.mpsvue.unitlity.TestActivity_3"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.unisob.vclibs.unitlity.TestActivity_4"
+            android:name="com.gerop.mpsvue.unitlity.TestActivity_4"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.unisob.vclibs.unitlity.TestActivity_5"
+            android:name="com.gerop.mpsvue.unitlity.TestActivity_5"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.unisob.vclibs.unitlity.TestActivity_6"
+            android:name="com.gerop.mpsvue.unitlity.TestActivity_6"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.unisob.vclibs.unitlity.TestActivity_7"
+            android:name="com.gerop.mpsvue.unitlity.TestActivity_7"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.unisob.vclibs.unitlity.TestActivity_8"
+            android:name="com.gerop.mpsvue.unitlity.TestActivity_8"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.unisob.vclibs.unitlity.TestActivity_9"
+            android:name="com.gerop.mpsvue.unitlity.TestActivity_9"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.unisob.vclibs.unitlity.TestActivity_10"
+            android:name="com.gerop.mpsvue.unitlity.TestActivity_10"
             android:screenOrientation="portrait" />
 
     </application>
